@@ -86,15 +86,15 @@ jupyter notebook notebooks/01_Diabetes_Prediction_NR_HIE.ipynb
 ```text
 ├── data/                   # Datasets (Pima & DiaBD)
 │   ├── diabetes.csv
-│   └── diab_bangladesh.csv
+│   └── diaBD_bangladesh.csv
 │
 ├── notebooks/              # Jupyter Notebooks (Source Code)
-│   ├── 01_Preprocessing.ipynb
-│   └── 02_Modeling_and_Evaluation.ipynb
+│   ├── Project_Notebook.ipynb
 │
 ├── reports/                # Documentation
 │   ├── Project_Report.pdf
 │   └── Project_Presentation.pptx
+│   └── Project_Proposal.pdf
 │
 ├── images/                 # Charts for README
 │   ├── architecture_diagram.png
@@ -102,10 +102,11 @@ jupyter notebook notebooks/01_Diabetes_Prediction_NR_HIE.ipynb
 │
 ├── requirements.txt        # Libraries List
 └── README.md               # Project Details
-**` ``` `**:
-**`## 📜 Future Roadmap`**:
+```
 
-**Demographic Expansion:** Retrain on male datasets to mitigate gender bias.
+## 📜 Future Roadmap
+
+**Demographic Expansion: Retrain on male datasets to mitigate gender bias.
 
 **Longitudinal Analysis:** Integrate LSTMs for time-series risk forecasting.
 
