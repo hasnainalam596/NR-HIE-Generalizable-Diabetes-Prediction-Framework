@@ -74,12 +74,15 @@ We verified that the model relies on medically relevant biomarkers rather than n
    ```bash
    git clone [https://github.com/hasnainalam596/NR-HIE-Generalizable-Diabetes-Prediction-Framework.git](https://github.com/hasnainalam596/NR-HIE-Generalizable-Diabetes-Prediction-Framework.git)
 2. **Install dependencies:**
+
 pip install -r requirements.txt
 
 3. **Run the Notebook:**
+
 jupyter notebook notebooks/01_Diabetes_Prediction_NR_HIE.ipynb
 
 ## 📂 Project Structure
+
 
 ├── data/               # Datasets (Pima Indians & DiaBD)
 ├── notebooks/          # Source code for Preprocessing & Modeling
