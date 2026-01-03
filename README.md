@@ -1,177 +1,109 @@
-![Python](https://img.shields.io/badge/Python-3.8+-blue)
-![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Healthcare-brightgreen)
-![Status](https://img.shields.io/badge/Status-Research%20Project-orange)
+# 🏥 Bridging the Generalizability Gap in Diabetes Prediction
+### **A Noise-Resilient Hybrid Imputation-Ensemble (NR-HIE) Framework**
 
-# NR-HIE: A Generalizable Diabetes Prediction Framework
+[![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge&logo=github)](https://github.com/hasnainalam596)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python)](https://www.python.org/)
+[![Framework](https://img.shields.io/badge/Framework-NR--HIE-orange?style=for-the-badge)](https://scikit-learn.org/)
 
-## Project Overview
-This project presents the **NR-HIE (Non-Redundant Hybrid Imputation Ensemble) framework**, a machine-learning–based approach for **robust and generalizable diabetes prediction**.  
-The framework is designed to address **data missingness**, **model bias**, and **generalization challenges** commonly observed in healthcare prediction systems.
-
-The proposed solution integrates **hybrid imputation strategies** with an **ensemble learning architecture** to improve predictive performance while maintaining stability across unseen data.
+> **"AI models shouldn't just predict; they must adapt to the messiness of real-world clinical data."**
 
 ---
 
-## Problem Statement
-Diabetes prediction models often suffer from:
-- High missing-value rates in clinical datasets
-- Poor generalization to external or unseen populations
-- Over-reliance on single imputation or single model strategies
+## 📌 Project Overview
+In medical diagnostics, **Missing Not At Random (MNAR)** data is a critical challenge. Standard AI models often fail when deployed in real-world settings because they learn from "clean" data but face "messy" patient records.
 
-This project aims to **mitigate these issues** by proposing a **generalizable, ensemble-based prediction framework**.
+This project introduces the **NR-HIE Framework**, a novel architecture designed to bridge the "Generalizability Gap." By combining a **Triple-Stream Imputation** strategy with **Stacked Generalization**, we achieved robust performance on completely unseen external populations.
 
 ---
 
-## Key Objectives
-- Handle missing clinical data effectively using **hybrid imputation**
-- Build a **robust ensemble classifier**
-- Improve predictive performance and generalization
-- Provide reproducible and interpretable ML workflows for healthcare data
+## 🚀 Key Features
+| Feature | Description |
+| :--- | :--- |
+| **🧠 Hybrid Imputation** | A triple-stream approach combining **MICE** (Global correlations), **KNN** (Local clusters), and **Robust Statistics** (Outlier handling). |
+| **⚙️ Stacking Ensemble** | A Meta-Learner utilizes predictions from **XGBoost**, **Random Forest**, and **Logistic Regression** to minimize variance. |
+| **🌍 Generalizability** | Validated on an external **Bangladeshi Cohort (DiaBD)**, achieving an accuracy surge instead of a drop. |
+| **🔍 Explainable AI** | Integrated **SHAP (Shapley Additive exPlanations)** to provide transparent, biologically valid reasoning for every prediction. |
 
 ---
 
-## Dataset Description
-- The dataset consists of structured clinical attributes relevant to diabetes prediction.
-- Missing values are present across multiple features, simulating real-world healthcare data challenges.
-- The dataset is preprocessed and validated within the notebook.
+## 📊 Results: The "Generalizability Surge"
+Most models degrade on external data. Ours improved.
 
-> **Note:** Due to privacy and licensing constraints, the dataset may not be publicly shared in the repository.
+| Metric | Baseline Model (Standard) | NR-HIE (Internal Test) | NR-HIE (External Validation) |
+| :--- | :---: | :---: | :---: |
+| **Accuracy** | 75.32% | **77.27%** | **81.62%** 🚀 |
+| **Brier Score**| 0.1302 | **0.1273** (High Safety) | - |
+| **ROC-AUC** | 0.74 | **0.83** | **0.76** |
 
----
-
-## Methodology (Pipeline Overview)
-
-### 1. Data Preprocessing
-- Data loading and inspection
-- Missing value analysis
-- Feature separation (numerical and categorical where applicable)
-
-### 2. Hybrid Imputation Strategy
-The NR-HIE framework applies **multiple imputation techniques in parallel**, ensuring:
-- Reduced information loss
-- Lower bias compared to single-method imputation
-- Improved robustness across feature distributions
-
-### 3. Feature Scaling & Preparation
-- Normalization / standardization
-- Train–test split with controlled randomness
-- Reproducibility ensured through fixed random seeds
-
-### 4. Model Architecture
-- Multiple base classifiers trained independently
-- Ensemble learning strategy applied for final prediction
-- Focus on stability and generalization rather than overfitting
-
-### 5. Model Evaluation
-Performance is evaluated using:
-- Accuracy
-- Precision
-- Recall
-- F1-Score
-- Confusion Matrix
+> *The drop in F1-score on external data is attributed to a prevalence shift, yet the high ROC-AUC confirms the model's robust ranking ability.*
 
 ---
 
-## Results
-- The proposed framework achieves **~81.6% accuracy**, outperforming baseline approaches.
-- Ensemble predictions show improved stability compared to individual models.
-- Results demonstrate strong potential for real-world clinical deployment.
+## 🛠️ Methodology & Architecture
+
+### 1. The Triple-Stream Pipeline
+Instead of relying on a single imputation method, we generate three "views" of the data:
+1.  **MICE Stream:** Captures multivariate relationships.
+2.  **KNN Stream:** Preserves local data structure.
+3.  **Robust Stream:** Preserves the signal of "missingness."
+
+### 2. Stacked Generalization
+The Level-1 Meta-Learner (Logistic Regression with L2 Regularization) dynamically weights these streams based on their predictive reliability.
+
+![Architecture Diagram](images/stacking architecture.png)
 
 ---
 
-## Interpretability & Insights
-- Feature importance analysis highlights key predictors contributing to diabetes risk.
-- The framework emphasizes **model transparency**, which is critical for medical decision-support systems.
+## 📉 Explainability (SHAP Analysis)
+We verified that the model relies on medically relevant biomarkers rather than noise.
+* **Top Predictors:** Glucose, BMI, Age (Biologically Valid).
+* **Noise Features:** Skin Thickness (Low Impact).
+
+![SHAP Summary](images/Shap Value Analysis.png)
 
 ---
 
-## Project Structure (Recommended)
-NR-HIE-Generalizable-Diabetes-Prediction-Framework/
-│
-├── data/
-│ └── (dataset if shareable)
-│
-├── notebooks/
-│ └── NR-HIE_Notebook.ipynb
-├──Reports/
-| └── presentation.ppt
-| └── Proposal.pdf
-| └── Report.pdf
-├── results/
-│ └── figures / metrics
-│
-├── README.md
-├── requirements.txt
+## 📦 Installation & Usage
 
+### Prerequisites
+* Python 3.8+
+* Jupyter Notebook
 
----
-
-## How to Run the Project
-
-1. Clone the repository
+### Setup
+1. **Clone the repository:**
    ```bash
-   git clone https://github.com/hasnainalam596/NR-HIE-Generalizable-Diabetes-Prediction-Framework.git
-Install dependencies
-
+   git clone [https://github.com/hasnainalam596/NR-HIE-Generalizable-Diabetes-Prediction-Framework.git](https://github.com/hasnainalam596/NR-HIE-Generalizable-Diabetes-Prediction-Framework.git)
+2. **Install dependencies:
 pip install -r requirements.txt
 
+3. **Run the Notebook:
+jupyter notebook notebooks/01_Diabetes_Prediction_NR_HIE.ipynb
 
-Run the notebook
+📂 Project Structure
 
-jupyter notebook NR-HIE_Notebook.ipynb
+├── data/               # Datasets (Pima Indians & DiaBD)
+├── notebooks/          # Source code for Preprocessing & Modeling
+├── reports/            # Project Report (PDF) & Presentation (PPTX)
+├── images/             # Visualizations for README
+├── requirements.txt    # Python dependencies
+└── README.md           # Project Documentation
 
-Technologies Used
+📜 Future Roadmap
 
-Python
+[ ] Demographic Expansion: Retrain on male datasets to mitigate gender bias.
 
-NumPy
+[ ] Longitudinal Analysis: Integrate LSTMs for time-series risk forecasting.
 
-Pandas
+[ ] Deployment: Develop a Streamlit/Flask web app for doctors.
 
-Scikit-learn
-
-Matplotlib / Seaborn
-
-Jupyter Notebook
-
-Limitations
-
-Evaluation is performed on a limited dataset
-
-External validation across multiple hospitals is not included
-
-Deep learning models are not explored in the current version
-
-Future Improvements
-
-Integration of deep learning architectures
-
-Cross-dataset external validation
-
-Advanced explainability using SHAP or LIME
-
-Deployment as a clinical decision-support web application
-
-License
-
-This project is released under the MIT License.
-
-Author
+🤝 Contact & Contribution
 
 Hasnain Alam
-Machine Learning & Data Science Student
 
-Acknowledgements
+Role: Data Scientist & Researcher
 
-This work is inspired by ongoing research in healthcare analytics and generalizable machine-learning frameworks.
+GitHub: @hasnainalam596
 
----
+Email: alamhasnain457@gmail.com
 
-### Next (Optional – Highly Recommended)
-If you want, I can:
-- Tailor this README for **research paper submission**
-- Optimize it for **recruiter visibility**
-- Create a **diagram-based pipeline figure**
-- Align README + notebook markdown **line-by-line**
-
-Just tell me what your **primary goal** is (academic / portfolio / job / publication).
+If you find this research useful, please star ⭐ this repository!
