@@ -50,7 +50,7 @@ Instead of relying on a single imputation method, we generate three "views" of t
 ### 2. Stacked Generalization
 The Level-1 Meta-Learner (Logistic Regression with L2 Regularization) dynamically weights these streams based on their predictive reliability.
 
-![Architecture Diagram](images/stacking architecture.png)
+![Architecture Diagram](Diabetes-NR-HIE-Project/Images/Stacking architecture.png)
 
 ---
 
