@@ -73,13 +73,13 @@ We verified that the model relies on medically relevant biomarkers rather than n
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/hasnainalam596/NR-HIE-Generalizable-Diabetes-Prediction-Framework.git](https://github.com/hasnainalam596/NR-HIE-Generalizable-Diabetes-Prediction-Framework.git)
-2. **Install dependencies:
+2. **Install dependencies:**
 pip install -r requirements.txt
 
-3. **Run the Notebook:
+3. **Run the Notebook:**
 jupyter notebook notebooks/01_Diabetes_Prediction_NR_HIE.ipynb
 
-📂 Project Structure
+## 📂 Project Structure
 
 ├── data/               # Datasets (Pima Indians & DiaBD)
 ├── notebooks/          # Source code for Preprocessing & Modeling
@@ -88,17 +88,17 @@ jupyter notebook notebooks/01_Diabetes_Prediction_NR_HIE.ipynb
 ├── requirements.txt    # Python dependencies
 └── README.md           # Project Documentation
 
-📜 Future Roadmap
+## 📜 Future Roadmap
 
-[ ] Demographic Expansion: Retrain on male datasets to mitigate gender bias.
+**Demographic Expansion:** Retrain on male datasets to mitigate gender bias.
 
-[ ] Longitudinal Analysis: Integrate LSTMs for time-series risk forecasting.
+**Longitudinal Analysis:** Integrate LSTMs for time-series risk forecasting.
 
-[ ] Deployment: Develop a Streamlit/Flask web app for doctors.
+**Deployment:** Develop a Streamlit/Flask web app for doctors.
 
-🤝 Contact & Contribution
+## 🤝 Contact & Contribution
 
-Hasnain Alam
+### Hasnain Alam
 
 Role: Data Scientist & Researcher
 
