@@ -83,13 +83,25 @@ jupyter notebook notebooks/01_Diabetes_Prediction_NR_HIE.ipynb
 
 ## 📂 Project Structure
 
-
-├── data/               # Datasets (Pima Indians & DiaBD)
-├── notebooks/          # Source code for Preprocessing & Modeling
-├── reports/            # Project Report (PDF) & Presentation (PPTX)
-├── images/             # Visualizations for README
-├── requirements.txt    # Python dependencies
-└── README.md           # Project Documentation
+```text
+├── data/                   # Datasets (Pima & DiaBD)
+│   ├── diabetes.csv
+│   └── DiaBD_bangladesh.csv
+│
+├── notebooks/              # Jupyter Notebooks (Source Code)
+│   ├── Project_Notebook.ipynb
+│
+├── reports/                # Documentation
+│   ├── Project_Report.pdf
+│   └── Project_Presentation.pptx
+|   └── Project_Proposal.pdf
+│
+├── images/                 # Charts for README
+│   ├── architecture_diagram.png
+│   └── shap_summary.png
+│
+├── requirements.txt        # Libraries List
+└── README.md               # Project Details
 
 ## 📜 Future Roadmap
 
@@ -105,7 +117,7 @@ jupyter notebook notebooks/01_Diabetes_Prediction_NR_HIE.ipynb
 
 Role: Data Scientist & Researcher
 
-GitHub: @hasnainalam596
+GitHub: (https://github.com/hasnainalam596)
 
 Email: alamhasnain457@gmail.com
 
