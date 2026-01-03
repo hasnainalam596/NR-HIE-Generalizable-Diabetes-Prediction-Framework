@@ -1,3 +1,8 @@
+![Python](https://img.shields.io/badge/Python-3.8+-blue)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Healthcare-brightgreen)
+![Status](https://img.shields.io/badge/Status-Research%20Project-orange)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
 # NR-HIE: A Generalizable Diabetes Prediction Framework
 
 ## Project Overview
