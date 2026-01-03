@@ -59,7 +59,7 @@ We verified that the model relies on medically relevant biomarkers rather than n
 * **Top Predictors:** Glucose, BMI, Age (Biologically Valid).
 * **Noise Features:** Skin Thickness (Low Impact).
 
-![SHAP Summary](images/Shap Value Analysis.png)
+![SHAP Summary](Diabetes-NR-HIE-Project/Images/Shap Value Analysis.png)
 
 ---
 
